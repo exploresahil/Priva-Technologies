@@ -85,47 +85,36 @@ gsap.to(".ready-afterChar", {
 
 //*----------> Mobile Number
 
-const numberPad = document.getElementById("number-pad");
-const mobileNumber = document.getElementById("mobile-number");
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "<"];
-let cursorPos = 3;
+const phoneNumber = document.getElementById("phone-number");
+const buttons = document.getElementsByClassName("number");
+const clearButton = document.getElementById("clear-button");
+const backspaceButton = document.getElementById("backspaceButton");
+const confirmButton = document.getElementById("confirm-button");
 
-// Create number pad buttons
-for (let number of numbers) {
-  const button = document.createElement("button");
-  button.innerText = number;
-  button.addEventListener("click", function () {
-    if (number === "<") {
-      if (mobileNumber.selectionStart > 3) {
-        mobileNumber.value =
-          mobileNumber.value.slice(0, mobileNumber.selectionStart - 1) +
-          mobileNumber.value.slice(mobileNumber.selectionStart);
-        cursorPos--;
-      }
-    } else {
-      if (mobileNumber.value.length < 13) {
-        mobileNumber.value =
-          mobileNumber.value.substr(0, mobileNumber.selectionStart) +
-          number +
-          mobileNumber.value.substr(mobileNumber.selectionStart);
-        cursorPos++;
-      }
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    if (phoneNumber.value.length < 13) {
+      phoneNumber.value += this.innerHTML;
     }
   });
-  numberPad.appendChild(button);
 }
 
-// allow to delete the last 10 digit via backspace button
-mobileNumber.addEventListener("keydown", function (event) {
-  if (
-    event.code === "Backspace" &&
-    mobileNumber.value.length > 3 &&
-    mobileNumber.selectionStart > 3
-  ) {
-    event.preventDefault();
-    mobileNumber.value =
-      mobileNumber.value.slice(0, mobileNumber.selectionStart - 1) +
-      mobileNumber.value.slice(mobileNumber.selectionStart);
-    cursorPos--;
+backspaceButton.addEventListener("click", function () {
+  if (phoneNumber.value.length > 3) {
+    phoneNumber.value = phoneNumber.value.substring(
+      0,
+      phoneNumber.value.length - 1
+    );
+    phoneNumber.selectionStart = phoneNumber.value.length;
   }
+});
+
+confirmButton.addEventListener("click", function () {
+  if (phoneNumber.value.length === 13) {
+    // Do something with the phone number
+  }
+});
+
+clearButton.addEventListener("click", function () {
+  phoneNumber.value = "+91";
 });

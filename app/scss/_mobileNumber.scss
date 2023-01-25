@@ -1,49 +1,142 @@
 @use 'variables' as v;
 @use 'globals' as g;
 
-#form {
-        z-index: 2;
-    
-        width: 200px;
-        height: calc(100vh - 160px);
-        font-family: v.$bebas;
-    
-        line-height: 0.9;
-    
-        letter-spacing: 1px;
-        position: relative;
-    
-        overflow: hidden;
 
-        div {
-            width: 100%;
-            //background-color: red;
+.mobile-number {
+    gap: 1rem;
+    
+
+    h4 {
+        font-family: v.$bebas;
+        font-size: 3rem;
+        color: v.$light;
+        font-weight: 400;
+        text-align: center;
+
+        width: 350px;
+
+        flex: start;
+    }
+
+    #number-pad {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+        width: 320px;
+
+        gap: 1em;
+
+        position: relative;
+
+        #backspaceButton {
+            height: 35px;
+            width: 40px;
+            position: absolute;
+            top: 8px;
+            right: 6px;
+
+            cursor: pointer;
 
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-            text-align: center;
+            border-left: 1px solid v.$light;
 
+            svg {
+                height: 20px;
+            }
 
-            label {
-                font-family: v.$roboto;
+            &:hover {
+                svg {
+                    fill: v.$dark;
+                }
+            }
+            
+        }
+
+        #phone-number {
+            width: 100%;
+            padding: 12px;
+            font-size: 20px;
+            border-radius: 10px;
+
+            outline: none;
+
+            background: rgba(255, 255, 255, 0.375);
+            box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+
+            color: v.$light;
+
+            
+
+            &:focus {
+                background: rgba(255, 255, 255, 0.375);
+                    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.125);
+
+                    outline: none;
             }
         }
 
-    
-        #number-pad {
-            display: grid;
-            grid-template-columns: auto auto auto;
+        #buttons {
+            width: 350px;
+            display: flex;
+            flex-wrap: wrap;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 0.5em;
             
-            width: auto;
-        
-            gap: 1rem;
-        }
+            .number {
+                width: 100px;
+                padding: 15px;
+                font-size: 1.2rem;
+                background: none;
+                border-radius: 10px;
 
-        #number-pad button {
-            width: 50px;
-            height: 50px;
+                background: rgba(255, 255, 255, 0.375);
+                box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.125);
+
+                color: v.$light;
+
+                cursor: pointer;
+
+                &:hover  {
+                        background-color: v.$light;
+                        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+                        border: 1px solid rgba(255, 255, 255, 0.125);
+                        color: v.$blue;
+                    }   
+            }
+
+            #clear-button,
+            #confirm-button {
+                width: 100px;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 10px;
+                
+                background: rgba(255, 255, 255, 0.375);
+                box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.125);
+                
+                color: v.$light;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: v.$light;
+                    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.125);
+                    color: v.$blue;
+                }
+            }
         }
+    }
 }
-
-
