@@ -1,0 +1,434 @@
+@use 'variables' as v;
+@use 'globals' as g;
+
+
+//*----------> Defaults
+
+body {
+    background-color: v.$dark;
+    color: v.$light;
+    position: relative;
+}
+
+//*----------> for Tablet
+
+//*----------> Custom CSS Starts Here
+
+
+
+//*----------> Body Background Animation
+
+.aurora {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: #000;
+    z-index: -99;
+    opacity: 0.75;
+
+    top: 0;
+}
+
+.aurora:before,
+.aurora:after {
+    z-index: 1;
+    
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 100%;
+    opacity: 0.18;
+
+    
+}
+
+.aurora:before {
+    box-shadow: 0 0 35vmax 35vmax v.$red;
+    animation: hue 5s 0s linear infinite, move1 10s 0s linear infinite;
+}
+
+.aurora:after {
+    box-shadow: 0 0 35vmax 35vmax v.$blue;
+    animation: hue 10s 0s linear infinite, move2 20s 0s linear infinite;
+}
+
+@-moz-keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@-webkit-keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@-o-keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@-moz-keyframes move1 {
+    0% {
+        top: 0vh;
+        left: 50vw;
+    }
+
+    25% {
+        left: 0vw;
+    }
+
+    50% {
+        top: 100vh;
+    }
+
+    75% {
+        left: 100vw;
+    }
+
+    100% {
+        top: 0vh;
+        left: 50vw;
+    }
+}
+
+@-webkit-keyframes move1 {
+    0% {
+        top: 0vh;
+        left: 50vw;
+    }
+
+    25% {
+        left: 0vw;
+    }
+
+    50% {
+        top: 100vh;
+    }
+
+    75% {
+        left: 100vw;
+    }
+
+    100% {
+        top: 0vh;
+        left: 50vw;
+    }
+}
+
+@-o-keyframes move1 {
+    0% {
+        top: 0vh;
+        left: 50vw;
+    }
+
+    25% {
+        left: 0vw;
+    }
+
+    50% {
+        top: 100vh;
+    }
+
+    75% {
+        left: 100vw;
+    }
+
+    100% {
+        top: 0vh;
+        left: 50vw;
+    }
+}
+
+@keyframes move1 {
+    0% {
+        top: 0vh;
+        left: 50vw;
+    }
+
+    25% {
+        left: 0vw;
+    }
+
+    50% {
+        top: 100vh;
+    }
+
+    75% {
+        left: 100vw;
+    }
+
+    100% {
+        top: 0vh;
+        left: 50vw;
+    }
+}
+
+@-moz-keyframes move2 {
+    0% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    25% {
+        top: 100vh;
+    }
+
+    50% {
+        left: 0vw;
+    }
+
+    75% {
+        top: 0vh;
+    }
+
+    100% {
+        top: 50vh;
+        left: 100vw;
+    }
+}
+
+@-webkit-keyframes move2 {
+    0% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    25% {
+        top: 100vh;
+    }
+
+    50% {
+        left: 0vw;
+    }
+
+    75% {
+        top: 0vh;
+    }
+
+    100% {
+        top: 50vh;
+        left: 100vw;
+    }
+}
+
+@-o-keyframes move2 {
+    0% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    25% {
+        top: 100vh;
+    }
+
+    50% {
+        left: 0vw;
+    }
+
+    75% {
+        top: 0vh;
+    }
+
+    100% {
+        top: 50vh;
+        left: 100vw;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    25% {
+        top: 100vh;
+    }
+
+    50% {
+        left: 0vw;
+    }
+
+    75% {
+        top: 0vh;
+    }
+
+    100% {
+        top: 50vh;
+        left: 100vw;
+    }
+}
+
+//*----------> Header Section
+
+header {
+
+    z-index: 2;
+
+    padding: 0 10vw;
+
+    height: 80px;
+
+    position: relative;
+
+    h2 {
+        font-family: v.$roboto;
+        text-transform: uppercase;
+    }
+
+    .brand-full-name {
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        margin: 0 auto;
+        height: 50%;
+        width: 350px;
+
+        background-color: v.$blue;
+        color: v.$dark;
+
+        border-radius: 0 0 20px 20px;
+        
+
+        p {
+            font-family: v.$roboto;
+            font-size: 1.2rem;
+        }
+
+        
+    }
+
+    .time {
+        text-align: end;
+        
+        div {
+            font-family: v.$roboto;
+
+            &:nth-of-type(2) {
+                color: v.$mid-ft;
+            }
+        }    
+    }
+}
+
+//*----------> Main Section
+
+main {
+    z-index: 2;
+
+    width: 100vw;
+    height: calc(100vh - 160px);
+    font-family: v.$bebas;
+
+    line-height: 0.9;
+
+    letter-spacing: 1px;
+    position: relative;
+
+    overflow: hidden;
+
+    h3 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+
+        &:nth-of-type(2) {
+            margin-top: -15px;
+        }
+    }
+
+    h2 {
+        font-size: 20rem;
+        color: v.$yellow;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
+        
+        transform: translateY(-8px);
+        
+
+        &:nth-of-type(2) {
+            position: absolute;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
+            color: v.$light;
+            transform: translateY(0);
+        }
+    }
+
+    p {
+        font-family: v.$roboto;
+        margin-top: -15px;
+        text-transform: uppercase;
+
+        color: v.$yellow;
+    }
+}
+
+//*----------> Footer Section
+
+footer {
+    z-index: 2;
+
+    padding: 0 10vw;
+    
+    height: 80px;
+
+    button {
+        background-color: v.$light;
+        border: none;
+
+        border-radius: 20px;
+
+        padding: 0.5em 1.5em;
+
+        font-family: v.$roboto;
+        font-size: 1rem;
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        &:hover, &:focus {
+            background-color: v.$blue;
+        }
+    }
+
+    a {
+        color: v.$mid-ft;
+        font-family: v.$roboto;
+
+        &:hover, &:focus {
+            color: v.$light;
+        }
+    }
+}
