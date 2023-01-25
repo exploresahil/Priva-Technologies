@@ -1,6 +1,6 @@
 @use 'variables' as v;
 @use 'globals' as g;
-
+@use "mobileNumber";
 
 //*----------> Defaults
 
@@ -120,6 +120,8 @@ main {
         color: v.$yellow;
     }
 }
+
+
 
 //*----------> Footer Section
 
