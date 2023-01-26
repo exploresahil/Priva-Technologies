@@ -19,7 +19,7 @@
       </div>
     </header>
 
-    <main class="flex flex-jc-ctr flex-ai-ctr flex-fd-col">
+    <main id="mainReady" class="flex flex-jc-ctr flex-ai-ctr flex-fd-col">
       <h3>Hello I am</h3>
       <h2 class="ready">Ready</h2>
       <h2 class="ready-after">Ready</h2>
@@ -29,9 +29,14 @@
 
     <footer class="flex flex-jc-sb flex-ai-ctr">
       <button id="help" title="Tap to get help">Help</button>
-      <a href="./pages/mobile_number.html" title="This is for logic only">'IF PLUGED IN'</a>
+      <a href="#" id="openPopup" title="This is for logic only"
+        >'IF PLUGED IN'</a
+      >
       <button id="language" title="Tap to change language">Language</button>
       <div class="aurora"></div>
+      <div id="popupFive" class="hidden">
+        <p>Charger Connected</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/split-type"></script>

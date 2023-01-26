@@ -1,3 +1,7 @@
+const script = document.createElement("script");
+script.src = "./js/app.js";
+document.body.append(script);
+
 //*----------> Date & Time
 
 const date = new Date();
@@ -34,6 +38,42 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 
+//*----------> Open Popup
+
+const openButton = document.querySelector("#openPopup");
+const popup = document.querySelector("#popupFive");
+const mainReady = document.querySelector("#mainReady");
+const popupFive = new SplitType("#popupFive", {
+  charClass: "popupFiveChar",
+});
+
+openButton.addEventListener("click", function () {
+  gsap.from(".popupFiveChar", {
+    y: 80,
+    opacity: "0",
+    stagger: 0.02,
+    duration: 0.05,
+    ease: Power1.easeOut,
+  });
+
+  gsap.to(".popupFiveChar", {
+    y: -80,
+    opacity: "0",
+    stagger: 0.02,
+    duration: 0.05,
+    ease: Power1.easeOut,
+
+    delay: 1.2,
+  });
+
+  popup.classList.remove("hidden");
+  mainReady.classList.add("visibilityHidden");
+  setTimeout(function () {
+    popup.classList.add("hidden");
+    window.location.href = "./pages/mobile_number.html";
+  }, 1600);
+});
+
 //*----------> Split & Gsap
 
 const ready = new SplitType(".ready", {
@@ -48,6 +88,8 @@ gsap.from(".readyChar", {
   ease: Power1.easeOut,
   repeat: -1,
   repeatDelay: 2,
+
+  opacity: "0",
 });
 
 gsap.to(".readyChar", {
@@ -58,6 +100,8 @@ gsap.to(".readyChar", {
   ease: Power1.easeOut,
   repeat: -1,
   repeatDelay: 2,
+
+  opacity: "0",
 });
 
 const readyafter = new SplitType(".ready-after", {
@@ -71,6 +115,8 @@ gsap.from(".ready-afterChar", {
   ease: Power1.easeOut,
   repeat: -1,
   repeatDelay: 2,
+
+  opacity: "0",
 });
 
 gsap.to(".ready-afterChar", {
@@ -81,40 +127,8 @@ gsap.to(".ready-afterChar", {
   ease: Power1.easeOut,
   repeat: -1,
   repeatDelay: 2,
+
+  opacity: "0",
 });
 
-//*----------> Mobile Number
 
-const phoneNumber = document.getElementById("phone-number");
-const buttons = document.getElementsByClassName("number");
-const clearButton = document.getElementById("clear-button");
-const backspaceButton = document.getElementById("backspaceButton");
-const confirmButton = document.getElementById("confirm-button");
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
-    if (phoneNumber.value.length < 13) {
-      phoneNumber.value += this.innerHTML;
-    }
-  });
-}
-
-backspaceButton.addEventListener("click", function () {
-  if (phoneNumber.value.length > 3) {
-    phoneNumber.value = phoneNumber.value.substring(
-      0,
-      phoneNumber.value.length - 1
-    );
-    phoneNumber.selectionStart = phoneNumber.value.length;
-  }
-});
-
-confirmButton.addEventListener("click", function () {
-  if (phoneNumber.value.length === 13) {
-    // Do something with the phone number
-  }
-});
-
-clearButton.addEventListener("click", function () {
-  phoneNumber.value = "+91";
-});
