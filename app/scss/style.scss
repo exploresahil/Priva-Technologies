@@ -490,3 +490,50 @@ footer {
     visibility: hidden;
 }
 
+#helpPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 999;
+
+    background-color: v.$light;
+
+    color: v.$dark;
+
+    padding: 20px 30px;
+
+    font-family: v.$roboto;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+    .help_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 2em;
+
+        border-bottom: 1px solid v.$dark;
+        margin-bottom: 10px;
+
+        h2 > span {
+            color: v.$yellow;
+        }
+
+        p {
+            rotate: 45deg;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+    p {
+        margin: 20px 0;
+    }
+}
+
