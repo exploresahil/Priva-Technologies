@@ -17,6 +17,8 @@ const helpClose = document.querySelector("#helpClose");
 help.addEventListener("click", function () {
   helpPopup.classList.remove("hidden");
   mainReady.classList.add("visibilityHidden");
+  hello.pause();
+  mobileNumber.pause();
 });
 
 helpClose.addEventListener("click", function () {
@@ -72,7 +74,7 @@ var chargerConnected = document.getElementById("chargerConnected");
 
 openButton.addEventListener("click", function () {
   chargerConnected.play();
-
+  hello.pause();
   gsap.from(".popupFiveChar", {
     y: 80,
     opacity: "0",
@@ -110,9 +112,8 @@ openButtonNotComp.addEventListener("click", function () {
   mainReady.classList.add("visibilityHidden");
   connectionFailed.load();
   connectionFailed.play();
-
+  hello.pause();
   setTimeout(function () {
-    
     popupNotComp.classList.add("hidden");
     mainReady.classList.remove("visibilityHidden");
   }, 1600);
