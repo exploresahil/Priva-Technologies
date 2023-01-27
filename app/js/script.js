@@ -58,8 +58,11 @@ const mainReady = document.querySelector("#mainReady");
 const popupFive = new SplitType("#popupFive", {
   charClass: "popupFiveChar",
 });
+var audio = document.getElementById("myAudio");
 
 openButton.addEventListener("click", function () {
+  audio.play();
+  
   gsap.from(".popupFiveChar", {
     y: 80,
     opacity: "0",
