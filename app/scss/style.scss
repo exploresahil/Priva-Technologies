@@ -440,13 +440,13 @@ footer {
     }
 }
 
-#popupFive {
+#popupFive, #popupNotComp, #popupNotInSys {
     font-family: v.$bebas;
     font-size: 8rem;
 
     position: absolute;
 
-    width: 500px;
+    width: 550px;
 
     text-align: center;
     line-height: 0.8;
@@ -460,7 +460,26 @@ footer {
 
     z-index: 999;
 
-    color: v.$light;
+    color: v.$green;
+}
+
+ #popupNotInSys {
+    font-family: v.$roboto;
+
+    width: 800px;
+    font-size: 3rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+    p:nth-of-type(2) {
+        color: v.$green;
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+ }
+
+.warning {
+    color: v.$red !important;
 }
 
 .hidden {
@@ -470,3 +489,4 @@ footer {
 .visibilityHidden {
     visibility: hidden;
 }
+

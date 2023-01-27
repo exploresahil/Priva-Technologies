@@ -27,6 +27,7 @@ backspaceButton.addEventListener("click", function () {
 confirmButton.addEventListener("click", function () {
   if (phoneNumber.value.length === 13) {
     // Do something with the phone number
+    window.location.href = "../index.html";  
   }
 });
 
@@ -39,4 +40,19 @@ const home = document.querySelector("#home");
 
 home.addEventListener("click", function () {
   window.location.href = "../index.html";
+});
+
+//*----------> Open Popup not in System
+
+const openButtonNotInSys = document.querySelector("#openPopupNotInSys");
+const popupNotInSys = document.querySelector("#popupNotInSys");
+
+openButtonNotInSys.addEventListener("click", function () {
+  popupNotInSys.classList.remove("hidden");
+  mainReady.classList.add("visibilityHidden");
+
+  setTimeout(function () {
+    popupNotInSys.classList.add("hidden");
+    mainReady.classList.remove("visibilityHidden");
+  }, 3500);
 });

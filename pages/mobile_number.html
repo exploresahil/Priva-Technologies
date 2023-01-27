@@ -19,7 +19,10 @@
       </div>
     </header>
 
-    <main class="mobile-number flex flex-jc-ctr flex-ai-ctr flex-fd-col">
+    <main
+      id="mainReady"
+      class="mobile-number flex flex-jc-ctr flex-ai-ctr flex-fd-col"
+    >
       <h4 class="mobileNumberHeading">Please enter your mobile no</h4>
       <div id="number-pad">
         <input
@@ -64,8 +67,15 @@
 
     <footer class="flex flex-jc-sb flex-ai-ctr">
       <button id="help" title="Tap to get help">Help</button>
+      <a href="#" id="openPopupNotInSys" title="This is for logic only"
+        >'IF NOT IN SYSTEM'</a
+      >
       <button id="language" title="Tap to change language">Language</button>
       <div class="aurora"></div>
+      <div id="popupNotInSys" class="warning hidden">
+        <p>The Entered Mobile Number is not in the system</p>
+        <p>please try again</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/split-type"></script>

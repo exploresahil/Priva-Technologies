@@ -1,7 +1,3 @@
-const script = document.createElement("script");
-script.src = "./js/app.js";
-document.body.append(script);
-
 //*----------> Date & Time
 
 const date = new Date();
@@ -74,6 +70,21 @@ openButton.addEventListener("click", function () {
   }, 1600);
 });
 
+//*----------> Open Popup not COMPATIBLE
+
+const openButtonNotComp = document.querySelector("#openPopupNotComp");
+const popupNotComp = document.querySelector("#popupNotComp");
+
+openButtonNotComp.addEventListener("click", function () {
+  popupNotComp.classList.remove("hidden");
+  mainReady.classList.add("visibilityHidden");
+
+  setTimeout(function () {
+    popupNotComp.classList.add("hidden");
+    mainReady.classList.remove("visibilityHidden");
+  }, 1600);
+});
+
 //*----------> Split & Gsap
 
 const ready = new SplitType(".ready", {
@@ -130,5 +141,3 @@ gsap.to(".ready-afterChar", {
 
   opacity: "0",
 });
-
-
