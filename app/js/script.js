@@ -1,3 +1,13 @@
+//*----------> Hello Auto Play
+
+var hello = document.getElementById("hello");
+
+window.onload = function () {
+  setInterval(function () {
+    hello.play();
+  }, 10000);
+};
+
 //*----------> Open Popup Help
 
 const help = document.querySelector("#help");
@@ -58,11 +68,11 @@ const mainReady = document.querySelector("#mainReady");
 const popupFive = new SplitType("#popupFive", {
   charClass: "popupFiveChar",
 });
-var audio = document.getElementById("myAudio");
+var chargerConnected = document.getElementById("chargerConnected");
 
 openButton.addEventListener("click", function () {
-  audio.play();
-  
+  chargerConnected.play();
+
   gsap.from(".popupFiveChar", {
     y: 80,
     opacity: "0",

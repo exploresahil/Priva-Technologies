@@ -1,3 +1,13 @@
+//*----------> Mobile Number Auto Play
+
+var mobileNumber = document.getElementById("mobileNumber");
+
+window.onload = function () {
+  setInterval(function () {
+    mobileNumber.play();
+  }, 10000);
+};
+
 //*----------> Mobile Number
 
 const phoneNumber = document.getElementById("phone-number");
