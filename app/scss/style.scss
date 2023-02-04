@@ -9,6 +9,10 @@ body {
     color: v.$light;
 }
 
+audio {
+    display: none;
+}
+
 //*----------> for Tablet
 
 //*----------> Custom CSS Starts Here
@@ -535,10 +539,6 @@ footer {
     p {
         margin: 20px 0;
     }
-}
-
-.myAudio {
-    display: none;
 }
 
 //*----------> Registration Page
