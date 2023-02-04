@@ -98,3 +98,5 @@ openButtonNotInSys.addEventListener("click", function () {
     mainReady.classList.remove("visibilityHidden");
   }, 3500);
 });
+
+

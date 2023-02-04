@@ -17,7 +17,7 @@ const helpClose = document.querySelector("#helpClose");
 help.addEventListener("click", function () {
   helpPopup.classList.remove("hidden");
   mainReady.classList.add("visibilityHidden");
-  hello.pause();
+  /* hello.pause(); */
   mobileNumber.pause();
 });
 
@@ -74,7 +74,7 @@ var chargerConnected = document.getElementById("chargerConnected");
 
 openButton.addEventListener("click", function () {
   chargerConnected.play();
-  hello.pause();
+  /* hello.pause(); */
   gsap.from(".popupFiveChar", {
     y: 80,
     opacity: "0",
@@ -97,7 +97,7 @@ openButton.addEventListener("click", function () {
   mainReady.classList.add("visibilityHidden");
   setTimeout(function () {
     popup.classList.add("hidden");
-    window.location.href = "./pages/mobile_number.html";
+    window.location.href = "./pages/registration_page.html";
   }, 1600);
 });
 
