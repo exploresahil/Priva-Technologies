@@ -2,11 +2,11 @@
 
 var hello = document.getElementById("hello");
 
-window.onload = function () {
+/* window.onload = function () {
   setInterval(function () {
     hello.play();
   }, 10000);
-};
+}; */
 
 //*----------> Open Popup Help
 
