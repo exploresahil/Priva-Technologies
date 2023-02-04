@@ -110,15 +110,27 @@ main {
         font-size: 20rem;
         color: v.$yellow;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
-        
+
         transform: translateY(-8px);
-        
+        background-image: url(../assets/png/flag.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 5px;
+        background-clip: text;
+        color: transparent;
+
 
         &:nth-of-type(2) {
             position: absolute;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
             color: v.$light;
             transform: translateY(0);
+            background-image: url(../assets/png/flag.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 5px;
+                background-clip: text;
+                color: transparent;
         }
     }
 
