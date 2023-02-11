@@ -118,15 +118,16 @@ main {
         background-repeat: no-repeat;
         background-position: 50% 5px;
         background-clip: text;
+        color: transparent;
         -webkit-background-clip: text;
         -moz-background-clip: text;
-        color: transparent;
 
 
         &:nth-of-type(2) {
             position: absolute;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
             color: v.$light;
+            
             transform: translateY(0);
             background-image: url(../assets/png/flag.png);
                 background-size: contain;
@@ -134,9 +135,11 @@ main {
                 background-position: 50% 5px;
                 background-clip: text;
                 color: transparent;
-
+                -webkit-background-image: url(../assets/png/flag.png);
+                -webkit-color: transparent;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
+                //-webkit-text-fill-color: transparent;
         }
     }
 
