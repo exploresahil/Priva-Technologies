@@ -7,6 +7,7 @@
 body {
     background-color: v.$dark;
     color: v.$light;
+    font-family: v.$roboto;
 }
 
 audio {
@@ -494,17 +495,7 @@ footer {
     }
  }
 
-.warning {
-    color: v.$red !important;
-}
 
-.hidden {
-    display: none;
-}
-
-.visibilityHidden {
-    visibility: hidden;
-}
 
 #helpPopup {
     position: absolute;
@@ -592,4 +583,54 @@ footer {
             }
         }
     }
+}
+
+//*----------> Registration
+
+.registrations {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    width: 600px;
+    height: 500px;
+
+    display: flex;
+    gap: 1em;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+
+    background: rgba(255, 255, 255, 0.375);
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.125);        border-radius: 10px;
+
+    .register_card {
+        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        border-radius: 10px;
+
+        padding: 10px;
+
+        width: 200px;
+        height: 200px;
+
+        text-align: center;
+    }
+}
+
+.warning {
+    color: v.$red !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.visibilityHidden {
+    visibility: hidden;
 }

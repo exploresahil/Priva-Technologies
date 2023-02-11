@@ -1,6 +1,6 @@
 //*----------> Open Popup
 
-const openButton = document.querySelector("#openPopup");
+/* const openButton = document.querySelector("#openPopup");
 const popup = document.querySelector("#popupFive");
 const mainReady = document.querySelector("#mainReady");
 const popupFive = new SplitType("#popupFive", {
@@ -18,4 +18,4 @@ openButton.addEventListener("click", function () {
     popup.classList.add("hidden");
     window.location.href = "./mobile_number.html";
   }, 1600);
-});
+}); */
