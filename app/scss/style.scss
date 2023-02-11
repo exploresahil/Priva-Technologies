@@ -118,6 +118,8 @@ main {
         background-repeat: no-repeat;
         background-position: 50% 5px;
         background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
         color: transparent;
 
 
